@@ -12,13 +12,13 @@ namespace Demo.Encapsulation
         private string[] Names ;
         private int[] Numbers;
         private int size ;
-
+        #endregion
+        
         #region Proprties
 
-        public int Size
-        {
-            get;
-        }
+        public int Size { get; } // read only property 
+        
+        
         #endregion
 
         #region Constructors
@@ -29,7 +29,59 @@ namespace Demo.Encapsulation
             Numbers = new int[size];
         }
 
+
         #endregion
+
+
+        #region Methods
+
+        public void AddPerson(int Position, string PersonName, int PhoneNumber)
+        {
+            if (Position < 0 || Position >= size)
+            {
+                Console.WriteLine("Invalid Position");
+                return;
+            }
+
+            if (PersonName is not null && Numbers is not null)
+            {
+
+                Names[Position] = PersonName;
+                Numbers[Position] = PhoneNumber;
+            }
+        }
+        #endregion
+
+        #region Getter - Setter 
+
+        public int GetPersonNumber(string PersonName)
+        {
+            if (Names is not null)
+            {
+                for (int i = 0; i < size; i++)
+                {
+                    if (Names[i] == PersonName)
+                    {
+                        return Numbers[i];
+                    }
+                }
+            }
+
+            return -1;
+        }
+
+        public void SetPersonNumber(string PersonName, int PhoneNumber)
+        {
+            if (Names is not null)
+            {
+                for (int i = 0; i < size; i++)
+                    if (Names[i] == PersonName)
+                    {
+                        Numbers[i] = PhoneNumber;
+                        break;
+                    }
+            }
+        }
         #endregion
     }
 }

@@ -33,8 +33,16 @@ namespace Demo
             //Console.WriteLine(emp.Deducation); 
             #endregion
 
-            Phonebook phonebook = new Phonebook(20);       
-        
+            Phonebook Note = new Phonebook(3);
+            
+            Note.AddPerson(0, "John", 123456);
+            Note.AddPerson(1, "Doe", 654321);
+            Note.AddPerson(2, "Jane", 987654);
+            
+            int PhoneNumber = Note.GetPersonNumber("Doe");
+            Console.WriteLine(PhoneNumber);
+
+            Console.WriteLine(PhoneNumber == -1 ? "Person not found" : $"Phone number is {PhoneNumber}");
         }
     }
 }
