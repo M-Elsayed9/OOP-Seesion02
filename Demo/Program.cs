@@ -1,5 +1,4 @@
 ﻿using Demo.Encapsulation;
-using System.Net.Http.Headers;
 
 namespace Demo
 {
@@ -39,10 +38,19 @@ namespace Demo
             Note.AddPerson(1, "Doe", 654321);
             Note.AddPerson(2, "Jane", 987654);
             
-            int PhoneNumber = Note.GetPersonNumber("Doe");
-            Console.WriteLine(PhoneNumber);
+            //int PhoneNumber = Note.GetPersonNumber("Doe");
+            //Console.WriteLine(PhoneNumber);
+            //Console.WriteLine(PhoneNumber == -1 ? "Person not found" : $"Phone number is {PhoneNumber}");
+            
+            
+            //Note["Ali"] = 123456; // set phone number for Ali using indexer as a setter
+            //Console.WriteLine(Note["Ali"]); // get phone number for Ali using indexer as a getter
 
-            Console.WriteLine(PhoneNumber == -1 ? "Person not found" : $"Phone number is {PhoneNumber}");
+
+            for (int i = 0; i < Note.Size; i++)
+            {
+                Console.WriteLine(Note[i]);
+            }
         }
     }
 }

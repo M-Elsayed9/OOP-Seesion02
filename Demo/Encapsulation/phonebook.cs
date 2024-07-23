@@ -83,5 +83,57 @@ namespace Demo.Encapsulation
             }
         }
         #endregion
+
+        #region Indexer
+        // Special type of property that allows you to access elements of a class or struct using array notation
+        // 1. Named wit keyword this
+        // 2. Must have at least one parameter
+
+
+        // note["Ali"] = 123456;
+
+       //public int this[string name]
+       // {
+       //     get
+       //     {
+       //         if (Names is not null && Numbers is not null)
+       //         {
+       //             for (int i = 0; i < Names.Length; i++)
+       //             {
+       //                 if (Names[i] == name)
+       //                 {
+       //                     return Numbers[i];
+       //                 }
+       //             }
+       //         }
+       //         return -1;
+       //     }
+
+       //     set   
+       //     {
+       //         if (Names is not null && Numbers is not null)
+       //         {
+       //             for (int i = 0; i < Names.Length; i++)
+       //             {
+       //                 if (Names[i] == name)
+       //                 {
+       //                     Numbers[i] = value;
+       //                     break;
+       //                 }
+       //             }
+       //         }
+       //     }
+       // }
+
+        // 0 :: Aliaa :: 123
+        // Indexer Overloading
+        public string this[int index]
+        {
+            get
+            {
+                    return $"{index} :: {Names[index]} :: {Numbers[index]}";
+            }
+        }
+        #endregion
     }
 }
