@@ -11,7 +11,7 @@ namespace Demo.Encapsulation
         #region Attributes
         private string[] Names ;
         private int[] Numbers;
-        private int size ;
+        private int size;
         #endregion
         
         #region Proprties
@@ -24,7 +24,7 @@ namespace Demo.Encapsulation
         #region Constructors
         public Phonebook(int size)
         {
-            this.Size = size;
+            Size = size;
             Names = new string[size];
             Numbers = new int[size];
         }
@@ -37,11 +37,6 @@ namespace Demo.Encapsulation
 
         public void AddPerson(int Position, string PersonName, int PhoneNumber)
         {
-            if (Position < 0 || Position >= size)
-            {
-                Console.WriteLine("Invalid Position");
-                return;
-            }
 
             if (PersonName is not null && Numbers is not null)
             {
