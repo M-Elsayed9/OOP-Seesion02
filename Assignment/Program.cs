@@ -1,4 +1,6 @@
-﻿namespace Assignment.Part02
+﻿using Assignment.Part03;
+
+namespace Assignment
 {
     internal class Program
     {
@@ -44,8 +46,35 @@
 
             #region Part 3
 
+            //Employee[] employees = new Employee[3];
+
+            //employees[0] = new Employee(employees.Length, "John", SecurityLevel.Guest, 1000, new HireDate(1, 1, 1), Gender.M);
+            //employees[1] = new Employee(employees.Length, "Mohamed", SecurityLevel.DBA, 2000, new HireDate(2, 2, 2), Gender.M);
+            //employees[2] = new Employee(employees.Length, "Ali", SecurityLevel.DBA | SecurityLevel.Guest | SecurityLevel.Developer | SecurityLevel.Secretary, 3000, new HireDate(3, 3, 3) , Gender.M);
+
+            Employee[] employees = new Employee[3];
+
+            employees[0] = Employee.CreateEmployee(SecurityLevel.DBA);
+            employees[1] = Employee.CreateEmployee(SecurityLevel.Guest);
+            employees[2] = Employee.CreateEmployee(SecurityLevel.DBA | SecurityLevel.Guest | SecurityLevel.Developer | SecurityLevel.Secretary);
+
+            foreach (Employee employee in employees)
+            {
+                Console.WriteLine(employee);
+            }
 
             #endregion
+
+            #region Q7
+
+            employees = Employee.SortEmployees(employees);
+
+            foreach (Employee employee in employees)
+            {
+                Console.WriteLine(employee);
+            }
         }
-    }
+
+    #endregion
 }
+   
