@@ -1,4 +1,5 @@
 ﻿using Demo.Encapsulation;
+using Demo.Inheritance;
 
 namespace Demo
 {
@@ -6,7 +7,7 @@ namespace Demo
     {
         static void Main(string[] args)
         {
-            #region Encapsulation
+            #region Encapsulation / Indexer
             //Employee emp = new Employee(1, "John Doe", 50000);
 
             //Employee emp = new Employee(name: "John", id: 10, salary: 2000);
@@ -67,19 +68,31 @@ namespace Demo
             // 3- call user defined constructor if exists
             // 4- assign the reference to the object in the heap to the reference in the stack
 
-            Car C1 = new Car(10, "BMW", 290);
+            //Car C1 = new Car(10, "BMW", 290);
 
-            Console.WriteLine(C1);
+            //Console.WriteLine(C1);
 
-            Car C2 = new Car(20, "byd");
+            //Car C2 = new Car(20, "byd");
 
-            Console.WriteLine(C2);
+            //Console.WriteLine(C2);
 
-            Car C3 = new Car(30);
+            //Car C3 = new Car(30);
 
-            Console.WriteLine(C3);
+            //Console.WriteLine(C3);
             #endregion
 
+            #region Inheritance
+            Parent P = new Parent(10, 20);
+
+            Console.WriteLine(P);
+
+            Console.WriteLine(P.Product());
+
+            Child C = new Child(10, 20, 30);
+            Console.WriteLine(C);
+            Console.WriteLine(C.Product());
+
+            #endregion
 
         }
     }
