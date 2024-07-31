@@ -1,4 +1,5 @@
-﻿using Demo.Encapsulation;
+﻿using Common;
+using Demo.Encapsulation;
 using Demo.Inheritance;
 
 namespace Demo
@@ -82,16 +83,36 @@ namespace Demo
             #endregion
 
             #region Inheritance
-            Parent P = new Parent(10, 20);
+            //Parent P = new Parent(10, 20);
 
-            Console.WriteLine(P);
+            //Console.WriteLine(P);
 
-            Console.WriteLine(P.Product());
+            //Console.WriteLine(P.Product());
 
-            Child C = new Child(10, 20, 30);
-            Console.WriteLine(C);
-            Console.WriteLine(C.Product());
+            //Child C = new Child(10, 20, 30);
+            //Console.WriteLine(C);
+            //Console.WriteLine(C.Product());
 
+            #endregion
+
+            #region Access Modifier
+            TypeA Obj = new TypeA();
+            // Obj.X = 10; // invalid
+            // Obj.Y = 20; // invalid
+            // Obj.Z = 30; // invalid
+            // Obj.M = 40; // invalid
+
+            TypeB ObjB = new TypeB();
+            // ObjB.X = 10; // invalid 
+            // ObjB.Y = 20; // invalid
+            // ObjB.Z = 30; // invalid
+            // ObjB.M = 40; // invalid
+
+            TypeC ObjC = new TypeC();
+            // ObjC.X = 10; // invalid protected private
+            // ObjC.Y = 20; // invalid protected private
+            // ObjC.Z = 30; // invalid internal protected
+            // ObjC.M = 40; // invalid private
             #endregion
 
         }
